@@ -21,26 +21,26 @@ function genPassword() {
 
 console.log(characterPrompt)
 
-  let characterAmt = "";
+  var characterAmt = "";
   var confirmLower = confirm("Do you want to include lowercase letters?")
   var confirmUpper = confirm("Do you want to include uppercase letters?")
   var confirmNum = confirm("Do you want to include numbers?")
   var confirmSpecial = confirm("Do you want to include special characters?")
 
     if (!confirmLower && !confirmUpper && !confirmNum && !confirmSpecial) {
-      alert("You have selected to have no password. Please select at least one option!")
+      alert("You have selected to have no password. Let's try again!")
       return genPassword();
     }
     
   while (characterAmt.length < characterPrompt) {
-
+    
     if (confirmLower) {
       characterAmt += lowerCase[Math.floor(Math.random() * lowerCase.length)];
         if (characterAmt.length === characterPrompt) {
           break;
         }
       }
-
+      
     if (confirmUpper) {
       characterAmt += upperCase[Math.floor(Math.random() * upperCase.length)];
         if (characterAmt.length === characterPrompt) {
@@ -61,9 +61,9 @@ console.log(characterPrompt)
           break;
         }
       }
-      console.log (genPassword)
     };
-  return genPassword
+
+  return characterAmt
 }
 
 function writePassword() {
